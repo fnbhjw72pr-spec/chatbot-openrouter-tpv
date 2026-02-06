@@ -1,20 +1,20 @@
 function sendMessage() {
-    let input = document.getElementById("user-input");
-    let message = input.value;
+    const input = document.getElementById("user-input");
+    const message = input.value.trim();
     if (message === "") return;
 
     addMessage("user", message);
     input.value = "";
 
-    let response = getBotResponse(message);
     setTimeout(() => {
+        const response = getBotResponse(message);
         addMessage("bot", response);
-    }, 500);
+    }, 600);
 }
 
 function addMessage(sender, text) {
-    let chatBox = document.getElementById("chat-box");
-    let messageDiv = document.createElement("div");
+    const chatBox = document.getElementById("chat-box");
+    const messageDiv = document.createElement("div");
     messageDiv.className = sender;
     messageDiv.innerText = text;
     chatBox.appendChild(messageDiv);
@@ -24,19 +24,21 @@ function addMessage(sender, text) {
 function getBotResponse(message) {
     message = message.toLowerCase();
 
-    if (message.includes("bonjour")) {
+    if (message.includes("bonjour") || message.includes("salut")) {
         return "Bonjour 😊 Comment puis-je vous aider ?";
     }
     if (message.includes("openrouter")) {
-        return "OpenRouter est une plateforme qui permet d’accéder à plusieurs modèles d’IA via une seule API.";
+        return "OpenRouter est une plateforme qui permet d’utiliser plusieurs modèles d’intelligence artificielle via une seule API.";
     }
     if (message.includes("chatbot")) {
-        return "Un chatbot est un programme qui simule une conversation avec un utilisateur.";
+        return "Un chatbot est un programme capable de dialoguer avec un utilisateur de manière automatique.";
+    }
+    if (message.includes("github")) {
+        return "GitHub est une plateforme qui permet d’héberger et partager du code.";
     }
     if (message.includes("merci")) {
         return "Avec plaisir 😄";
     }
 
-    return "Désolé, je n’ai pas compris votre question.";
+    return "Je suis désolé, je n’ai pas compris votre question.";
 }
-
