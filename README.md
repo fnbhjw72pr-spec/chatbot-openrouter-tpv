@@ -18,3 +18,7 @@ afin de démontrer le fonctionnement logique d’un chatbot.
 OpenRouter est une plateforme qui permet de connecter des chatbots à différents modèles d’intelligence artificielle via une seule API. 
 Dans ce TP, le chatbot fonctionne côté front-end avec des réponses simulées. 
 OpenRouter est mentionné pour expliquer le fonctionnement d’un vrai chatbot IA.
+
+## Schéma du fonctionnement du chatbot
+
+Utilisateur → Chatbot HTML → Simulation / Théorie OpenRouter → Réponse
